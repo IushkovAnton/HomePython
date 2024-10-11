@@ -6,8 +6,7 @@
 
 age = 36.6
 temperature = 25
+(age, temperature) = (temperature, age)
 
-transit = age
-age = temperature
-temperature = transit
 print(f'Hello, my age is {age} years old, my temperature is {temperature} degrees')
+
