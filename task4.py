@@ -20,7 +20,7 @@ y = int(input('Введите число y='))
 z = int(input('Введите число z='))
 
 
-print(max(x, y, z))
+print(f'Наибольшее число {max(x, y, z)}')
 
 
 

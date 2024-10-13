@@ -18,22 +18,21 @@ match sort:
         age = int(input('Введите возраст: '))
         for i in range(dlin):
             slovar = users[i]
-            if slovar['age'] > age:
-                print(users[i])
-            else:
-                print('Слишком большой возраст')
+            if slovar['age'] >= age:
+                print(f'''#Пользователь '{users[i]['login']}', возраст {users[i]['age']} лет, группа "{users[i]['group']}"''')
+
     case 2:
         letter_login = input('Введите первую букву логина: ').upper()
         for i in range(dlin):
             slovar = users[i]
             if slovar['login'][0] == letter_login:
-                print(users[i])
+                print(f'''#Пользователь '{users[i]['login']}', возраст {users[i]['age']} лет, группа "{users[i]['group']}"''')
     case 3:
         group = input('Введите наименование группы: ')
         for i in range(dlin):
             slovar = users[i]
             if slovar['group'] == group:
-                print(users[i])
+                print(f'''#Пользователь '{users[i]['login']}', возраст {users[i]['age']} лет, группа "{users[i]['group']}"''')
     case _:
         print('Введите цифру от 1 до 3: ')
 
