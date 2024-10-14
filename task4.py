@@ -19,6 +19,13 @@ x = int(input('Введите число x='))
 y = int(input('Введите число y='))
 z = int(input('Введите число z='))
 
+if x >= y and x >= z:
+    print(f'Наибольшее число {x}')
+elif y >= x and y >= z:
+    print(f'Наибольшее число {y}')
+else:
+    print(f'Наибольшее число {z}')
+
 
 print(f'Наибольшее число {max(x, y, z)}')
 
