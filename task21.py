@@ -23,41 +23,17 @@ template = """
 </html>
 """
 
-f = open('index.html', 'w+', encoding='utf-8')
+
+with open('index.html', encoding='utf-8') as file:
+    contents = file.readlines()
+    for j in range(1, len(contents)):
+        str1 = contents[j]
+        if '?' in str1:
+            for i in page:
+                if i in str1:
+                    value = page[i]
+                    template = template.replace('?', value, 1)
+
+f = open('index.html', 'w', encoding='utf-8')
 f.write(template)
 
-with open('index.html', 'r') as file:
-    data = file.read().replace('\n', '')
-
-
-# Индекс Знака вопроса
-def template_index():
-        return data.find('?')
-
-print(template_index())
-
-
-# print(template_index())
-# i = 0
-# def value_i():
-#         match i:
-#                 case 0:
-#                         return 'title'
-#                 case 1:
-#                         return 'charset'
-#                 case 2:
-#                         return 'alert'
-#                 case 3:
-#                         return 'p'
-#
-#
-# print(value_i())
-#
-# for i in range(len(template)):
-#         # if '?' in template[template_index():(template_index() + 10)]:
-#         #         template = template.replace('?', page[value_i()], 1)
-#                 f = open('index.html', 'w', encoding='utf-8')
-#                 f.write(template)
-
-#
-#
